@@ -3,9 +3,9 @@ var timerEl = document.getElementById('countdown');
 var btnStart = document.getElementById("btn-start");
 var welcome = document.getElementById("welcome");
 var questionPosition = 0;
-var divEl = document.querySelector(".container");
+
 // var next = divEl.querySelector(".next");
-var curruntQuestion;
+ 
 var count;
 var questions =[
     {
@@ -24,22 +24,33 @@ var questions =[
         correct: "true"
     }
  ];
-  var curruntQuestion = questions[questionPosition];
+ function startQuiz( ){
+  btnStart.style.visibility = "hidden";
+  welcome.style.visibility = "hidden";
+ countdown();
+ 
+     
+
+ }
+
+ function displayeQuestion(){
+  var divEl = document.querySelector(".container");
+  var curruntQuestion = questions[questionPosition].name
+  for(var i = 0; i < questions.length; i++){
+    curruntQuestion  += questions.name[Math.floor(Math.random()*questions.length)];
+
+  }
+ }
+ 
  
 
 
-function startQuiz( ){
-    btnStart.style.visibility = "hidden";
-    welcome.style.visibility = "hidden";
-   countdown();
-       
 
-   
     
     
     
 
- }
+ 
  
  
     

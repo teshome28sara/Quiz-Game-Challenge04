@@ -21,13 +21,14 @@ var questions =[
     {
         name: "what is the capital of Washington State?",
          answers:["Seattle", "Olympia", "Tacoma"],
-        correct: "true"
+        correct: "Olympia"
     }
  ];
  function startQuiz( ){
   btnStart.style.visibility = "hidden";
   welcome.style.visibility = "hidden";
- countdown();
+
+ displayeQuestion();
  
      
 
@@ -35,12 +36,12 @@ var questions =[
 
  function displayeQuestion(){
   var divEl = document.querySelector(".container");
-  var curruntQuestion = questions[questionPosition].name
-  for(var i = 0; i < questions.length; i++){
-    curruntQuestion  += questions.name[Math.floor(Math.random()*questions.length)];
+  var curruntQuestion = questions[questionPosition].name;
+  countdown();
+ divEl.value = curruntQuestion
 
   }
- }
+ 
  
  
 

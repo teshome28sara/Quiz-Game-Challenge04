@@ -1,12 +1,26 @@
 var timerEl = document.getElementById('countdown');
-
+var count;
 var btnStart = document.getElementById("btn-start");
 var welcome = document.getElementById("welcome");
 var questionPosition = 0;
+var curruntQuestion = questions[questionPosition]
 
-// var next = divEl.querySelector(".next");
+function displayeQuestion(){
+  var divEl = document.querySelector("#container");
+  for(var i = 0; i < divEl.length; i++){
+  divEl = curruntQuestion
+  divEl.append(curruntQuestion);
+  }
+  startQuiz();
  
-var count;
+}
+
+
+  
+
+
+ 
+
 var questions =[
     {
         name: "what is the biggest body of water in the world?",
@@ -27,20 +41,20 @@ var questions =[
  function startQuiz( ){
   btnStart.style.visibility = "hidden";
   welcome.style.visibility = "hidden";
-
- displayeQuestion();
- 
-     
+  countdown();
 
  }
 
- function displayeQuestion(){
-  var divEl = document.querySelector(".container");
-  var curruntQuestion = questions[questionPosition].name;
-  countdown();
- divEl.value = curruntQuestion
 
-  }
+
+ 
+     
+
+ 
+
+
+
+  
  
  
  
@@ -83,4 +97,4 @@ function countdown() {
     }
   }, 1000);
 }
-btnStart.addEventListener('click', startQuiz);
+btnStart.addEventListener('click',displayeQuestion);

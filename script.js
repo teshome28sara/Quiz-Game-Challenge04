@@ -1,60 +1,72 @@
-// var timerEl = document.getElementById('countdown');
-// var timeInterval;
-// var btnStart = document.getElementById("btn-start");
-// var welcome = document.getElementById("welcome");
-// var questionPosition= 0;
-// var divEl = document.querySelector("#container");
+ var timerEl = document.getElementById('countdown');
+ var timeInterval;
+ var btnStart = document.getElementById("btn-start");
+ var welcome = document.getElementById("welcome");
+ var questionPosition= 0;
+
+var divEl = document.querySelector("#container");
 
 
 
 
-
-// function displayQuestion(){
+ function displayQuestion(){
 
 
     
 
-//  var curruntQuestion = questions[questionPosition] 
-// //  var divEl = document.querySelector("#container");
-//  var body = document.body
+  var curruntQuestion = questions[questionPosition] 
 
-//  var pEl = document.createElement("p")
-//  pEl.textContent = curruntQuestion.name
-//  body.appendChild(pEl)
-// //  divEl.appendChild(pEl)
+  
+  var body = document.body
 
-// var divEl = document.querySelector("#container");
-//   var buttonEl = document.createElement("button");
-//   buttonEl.textContent = curruntQuestion.answers[0];
-//  body.appendChild(divEl)
-//   divEl.appendChild(buttonEl)
-//   var buttonEl = document.createElement("button");
-//   buttonEl.textContent = curruntQuestion.answers[1];
-//   body.appendChild(divEl)
-//   divEl.appendChild(buttonEl)
-//   var buttonEl = document.createElement("button");
-//   buttonEl.textContent = curruntQuestion.correct;
-//   body.appendChild(divEl)
-//   divEl.appendChild(buttonEl)
-//   btnStart.style.visibility = "hidden";
-//    welcome.style.visibility = "hidden";
-//    countdown();
-// }
+  var pEl = document.createElement("p")
+  pEl.textContent = curruntQuestion.name
+  body.appendChild(pEl)
+ divEl.appendChild(pEl)
 
-// function nextQuestion(){
-//     questionPosition ++;
+ 
+   var buttonEl = document.createElement("button");
+   buttonEl.textContent = curruntQuestion.answers[0];
+  body.appendChild(divEl)
+   divEl.appendChild(buttonEl)
+   var buttonEl = document.createElement("button");
+   buttonEl.textContent = curruntQuestion.answers[1];
+   body.appendChild(divEl)
+   divEl.appendChild(buttonEl)
+   var buttonEl = document.createElement("button");
+   buttonEl.textContent = curruntQuestion.correct;
+   body.appendChild(divEl)
+   divEl.appendChild(buttonEl)
+  btnStart.style.visibility = "hidden";
+    welcome.style.visibility = "hidden";
    
-// }
+ }
 
-// function showNextQuestion(){
-//     var  chosenAnswers = "";
+ divEl.addEventListener( "click" ,  function(event){
+   var element = event.target;
+if((element.matches("button"))){ 
+nextQuestion();
+}
+ });
 
-// }
 
-// function endGame(){
-//     // calls clear interval 
-//     // names the var  timeinterval
-// }
+ function nextQuestion(){
+    divEl.textContent = ""
+    questionPosition++;
+    //  questions.shift()
+     displayQuestion();
+   
+ }
+
+function showNextQuestion(){
+     var  chosenAnswers = "";
+
+ }
+
+ function endGame(){
+     // calls clear interval 
+     // names the var  timeinterval
+ }
 
 
 
@@ -145,20 +157,6 @@
          correct: "Olympia"
      }
   ];
-var div = getElementById("question-container");
-
-
-var questionPosition = 0;
- var curruntQuestion = questions[questionPosition];
-
- var template = `<p>What is the color of an ${curruntQuestion.name}</p>
- <button data-answer="${currntFood.color[0]}">${curruntQuestion.answers[0]}</button>
- <button date-answer="${currntFood.color[1]}">${curruntQuestion.answers[1]}</button>`
-
- 
- 
-
-
 
 
 
@@ -187,31 +185,31 @@ var questionPosition = 0;
     
  
 
-// // Timer that counts down from 75
-//  function countdown() {
-//    var timeLeft = 75;
-
+//  Timer that counts down from 75
+  function countdown() {
+    var timeLeft = 75;
+displayQuestion();
 // //    Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-//     timeInterval = setInterval(function () {
+     timeInterval = setInterval(function () {
 // //     // As long as the `timeLeft` is greater than 1
-//      if (timeLeft > 1) {
-// //       // Set the `textContent` of `timerEl` to show the remaining seconds
-//        timerEl.textContent = timeLeft + ' seconds remaining';
+      if (timeLeft > 1) {
+       // Set the `textContent` of `timerEl` to show the remaining seconds
+        timerEl.textContent = timeLeft + ' seconds remaining';
 // //       // Decrement `timeLeft` by 1
-//        timeLeft--;
+        
 //      } else if (timeLeft === 1) {
 // //       // When `timeLeft` is equal to 1, rename to 'second' instead of 'seconds'
-//        timerEl.textContent = timeLeft + ' second remaining';
-//        timeLeft--;
-//      } else {
+        timerEl.textContent = timeLeft + ' second remaining';
+        timeLeft--;
+      } else {
 // //       // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-// //       timerEl.textContent = '';
+      timerEl.textContent = '';
 // //       // Use `clearInterval()` to stop the timer
-//        clearInterval(timeInterval);
+        clearInterval(timeInterval);
 //     //  call the endGame function
 //          endGame();
-//      }
-//    }, 1000);
-//  }
+     }
+    }, 1000);
+  }
 
-// btnStart.addEventListener("click" , displayQuestion);
+ btnStart.addEventListener("click" ,  countdown);

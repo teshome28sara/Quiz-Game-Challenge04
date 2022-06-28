@@ -14,12 +14,37 @@
         <h2 id="welcome">Welcome to  Quiz</h2>
         <button id="btn-start">Start</button>
     </div>
-    <div id="container"></div>
-    
+    <div id="container">
+      <p></p>
+      <button data-answer="answer A">Answer A </button>
+      <button date-answer="Answer B">Answer B</button>
+      <button data-answer="answer C">Answer C </button>
+      <button date-answer="Answer D">Answer D</button>
+      
+      
+    </div>
+    <script>
+      var questionContainer = document.querySelector("container")
+      questionContainer.addEventListener( "click" ,  function(event){
+        var element = event.target;
+     if((clicked(element.matches("button")))) return;
+    //  element.getAtribute("data-answer");
+    var answer = element.dataSet.
+      });
+
+
+
+
+      
+    </script>
+
+
+
+
+    <!-- <div id="high-score-form"></div> -->
    
     
     
-   
         
           
  

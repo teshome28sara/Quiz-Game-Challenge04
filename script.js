@@ -1,4 +1,5 @@
  var timerEl = document.getElementById('countdown');
+ var timeLeft = 75;
  var timeInterval;
  var btnStart = document.getElementById("btn-start");
  var welcome = document.getElementById("welcome");
@@ -8,11 +9,12 @@
  var btnC = document.querySelector("#AnswerC");
  var firstQuestion = document.querySelector("#firstQuestion");
  var divEl = document.querySelector("#container");
- var scoreBoard = document.querySelector("#scores");
- var count = scoreBoard;
+ var scoreEl = document.querySelector("#scores");
+//  var score = 0;
+ 
 var chosenAnswer;
 var form = document.querySelector("#record");
-var timeLeft = 75;
+
 
 var questions =[
   {
@@ -32,7 +34,12 @@ var questions =[
       name: "what is the capital of Washington State?",
       answers:["Seattle", "Olympia", "Tacoma"],
       correct: "Olympia"
-  }
+  },
+  {
+    name: "what animal has the longest life span?",
+    answers:["Turtle", "Elephant", "Greenwood Shark"],
+    correct: "Olympia"
+}
 ];
 
 
@@ -44,7 +51,7 @@ var questions =[
 
  function displayQuestion(){
  
-  var curruntQuestion = questions[questionPosition]; 
+   var curruntQuestion = questions[questionPosition]; 
  
 
  
@@ -67,18 +74,33 @@ var questions =[
    btnB.textContent = curruntQuestion.answers[1];
   
   
-   btnC.textContent = curruntQuestion.correct;
+   btnC.textContent = curruntQuestion.correct; 
+  
   
   btnStart.style.visibility = "hidden";
     welcome.style.visibility = "hidden";
   divEl.style.visibility = "visible";
   btnA.addEventListener("click" , function() {
+    timeLeft -=10;
+  })
      
+    btnB.addEventListener("click" , function(){
+
+   
      
         timeLeft -=10;
+
        
   
        });
+
+       var score = 0;
+
+       btnC.addEventListener("click" , function(){
+        score++;
+       });
+
+      
   
  }
   
@@ -153,6 +175,7 @@ var questions =[
  
   function endGame(){
    divEl.textContent = "";
+   form.style.visibility = "visible";
   
   }
   

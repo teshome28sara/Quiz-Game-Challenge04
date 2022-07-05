@@ -25,4 +25,4 @@ THEN  the participant  can save their  initials and  score.
 
 ### Screenshot
 
-![Quiz Game Home Screen](/Assets/img/homework-04.png "Quiz Game home screen") 
+![Quiz Game Home Screen](/Assets/homework-04.png "Quiz Game home screen") 

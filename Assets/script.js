@@ -1,3 +1,4 @@
+//  Select or store  all needed elements 
  var timerEl = document.getElementById('countdown');
  var timeLeft = 75;
  var timeInterval;
@@ -9,13 +10,21 @@
  var btnC = document.querySelector("#AnswerC");
  var firstQuestion = document.querySelector("#firstQuestion");
  var divEl = document.querySelector("#container");
- var scoreEl = document.querySelector("#scores");
-//  var score = 0;
+
+ var scoreBtn = document.querySelector("#score-btn");
+
+ scoreBtn.addEventListener("click" , function(){
+  var initals = document.querySelector("#score-form").value
+  timeLeft = timeLeft+1;
+ localStorage.setItem("high-score",JSON.stringify( {initals, timeLeft }))
+ window.location.href = "./highscore.html"
+ })
+
  
 var chosenAnswer;
 var form = document.querySelector("#record");
 
-
+// create an array  object for questions
 var questions =[
   {
       name: "what is the biggest body of water in the world?",
@@ -32,22 +41,26 @@ var questions =[
   },
   {
       name: "what is the capital of Washington State?",
-      answers:["Seattle", "Olympia", "Tacoma"],
+      answers:["Seattle",  "Tacoma"],
       correct: "Olympia"
   },
   {
     name: "what animal has the longest life span?",
-    answers:["Turtle", "Elephant", "Greenwood Shark"],
-    correct: "Olympia"
+    answers:["Turtle", "Elephant"],
+    correct: "Greenwood Shark"
+},
+{
+  name: "what is the bsmallest  bird in the world?",
+  answers:["Bluejay", "Mocking bird"],
+  correct: "Bee Hummingbird"
 }
 ];
 
 
 
-//  var divEl = document.querySelector("#container");
-// divEl.addEventListener("click" , function (){
 
- 
+
+//  Create a function to display question
 
  function displayQuestion(){
  
@@ -108,6 +121,11 @@ var questions =[
   divEl.addEventListener( "click" ,  function(event){
    var element = event.target;
  if((element.matches("button"))){
+  if(questionPosition === questions.length - 1){
+     clearInterval(timeInterval);
+     endGame();
+  
+  }
  nextQuestion();
  }
  });
@@ -129,22 +147,6 @@ var questions =[
 
  
 
-  
-   
-  // btnB.addEventListener("click" , function(){
-  //   questionPosition++;
-
-  // })
-
-  // function checkAnswer(){
-  //   btnA.addEventListener("click" , function() {
-     
-     
-  //     timeLeft -=10;
-     
-
-  //   })
-  // }
 
   
    
@@ -156,8 +158,7 @@ var questions =[
    
 
   
-  // btnA.addEventListener("click" , checkAnswer);
-
+ 
   
  
  
@@ -167,9 +168,7 @@ var questions =[
   
    
   
-   //  divEl.textContent = "";
-  
-   //  checkAnswer();
+   
   
 
  
@@ -204,123 +203,6 @@ var questions =[
 
 
 
-
-  //      questionPosition++;
-    
-      //  questions.shift()
-     
-     //  endGame();
-    
- 
-     
-  
-    
-     
-   
- 
-
-
-
-
-
- 
- 
- 
-  
- 
-     // calls clear interval 
-     // names the var  timeinterval
- 
-
-
-
-
-   
-
-
-
-
- 
- 
-  
-
-
-
-
-
-
-
-    
-
-
-
-
-  
-
-
-
-
- 
-
- 
-
- 
-
-
- 
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
- 
-
-
-
-  
-
-
- 
-
- 
-
-
- 
-     
-
- 
-
-
-
-  
- 
- 
- 
-
-
-
-    
-    
-    
 
  
  

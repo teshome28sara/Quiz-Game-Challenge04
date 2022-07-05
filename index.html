@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Quiz game</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/Assets/style.css" />
   </head>
   <body>
    
@@ -17,17 +17,18 @@
     <div id="container">
       <p id="firstQuestion"></p>
      
-        <button id="AnswerA"> </button>
-      <button id="AnswerB"></button>
-      <button id="AnswerC"> </button>
+        <button class="qBtn" id="AnswerA"> </button>
+      <button  class=qBtn" id="AnswerB"></button>
+      <button class="qBtn" id="AnswerC"> </button>
        
       
       
     </div>
     <div id="record">
-     <form id="score-form">
-      <input type="text" placeholder="type your name here ">
+     <form ">
+      <input id="score-form" type="text" placeholder="type your initials here ">
     </form> 
+    <button id="score-btn">Saved Scores</button>
   </div>
 
    <div id="scores">
@@ -55,6 +56,6 @@
      
     
     
-    <script src="script.js"></script>
+    <script src="/Assets/script.js"></script>
   </body>
 </html>

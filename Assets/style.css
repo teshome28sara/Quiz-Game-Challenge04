@@ -1,0 +1,25 @@
+.message{
+text-align: center;
+}
+#container{
+    visibility: hidden;
+}
+#record{
+    visibility: hidden;
+   
+}
+
+#btn-start{
+   background-color: blue;
+   cursor: pointer;
+}
+
+.qBtn{
+    cursor: pointer;
+}
+
+#score-btn{
+    background-color: black;
+    color: antiquewhite;
+    cursor: pointer;
+}
